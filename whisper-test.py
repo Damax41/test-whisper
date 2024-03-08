@@ -25,8 +25,7 @@ def retranscript(audio_path, model_name="base"):
         result = model.transcribe(
             audio_path,
             temperature=0.0,
-            word_timestamps=False,
-            decode_options=options
+            word_timestamps=False
         )
 
         del model
