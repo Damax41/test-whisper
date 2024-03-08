@@ -21,7 +21,7 @@ def retranscript(audio_path, model_name="base"):
     try:
         device = "cuda" if torch.cuda.is_available() else "cpu"
         model = whisper.load_model(model_name).to(device)
-        options = whisper.DecodingOptions(fp16=False)
+        whisper.DecodingOptions(fp16=False)
         result = model.transcribe(
             audio_path,
             temperature=0.0,
